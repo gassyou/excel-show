@@ -1,3 +1,4 @@
+import { XlsxService } from './core/service/xlsx/xlsx.service';
 import { ElectronService } from './core/service';
 import { Component } from '@angular/core';
 import { AppConfig } from '../environments/environment';
@@ -9,9 +10,12 @@ import { AppConfig } from '../environments/environment';
 })
 export class AppComponent {
   title = 'excel-show';
+  data: any;
+
 
   constructor(
     private electronService: ElectronService,
+    private xlsx: XlsxService
 
   ) {
 
@@ -25,5 +29,16 @@ export class AppComponent {
     } else {
       console.log('Run in browser');
     }
+  }
+
+
+  change(e: Event) {
+    const node = e.target as HTMLInputElement;
+    this.xlsx.import(node.files![0]).then(res => {
+      this.data = res;
+
+
+    });
+    node.value = '';
   }
 }

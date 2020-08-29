@@ -24,7 +24,9 @@
   "dependencies": {
     "electron": "^10.1.0",
     "electron-builder": "^22.8.0",
-    "electron-reload": "^1.5.0"
+    "electron-reload": "^1.5.0",
+    "file-saver": "^2.0.2",
+    "xlsx": "^0.16.6"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "9.2.0",

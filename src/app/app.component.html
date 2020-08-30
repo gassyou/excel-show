@@ -1,2 +1,25 @@
-<input type="file" (change)="change($event)" multiple="false"  />
-<p>result: {{ data | json }}</p>
+<div class="container-fluid toolbar">
+  <div class="row">
+    <div class="col-sm">
+      <a class="upload-btn-wrapper">
+        <button class="btn btn-primary btn-sm">打开</button>
+        <input type="file" (change)="change($event)" multiple="false"  style="margin-left: 5px;"/>
+      </a>
+      <span class="file-name">m</span>
+    </div>
+
+    <div style="text-align: right;" class="col-sm" >
+      <label class="file-name">共100行</label>
+      <button class="btn btn-primary btn-sm" style="margin-right: 5px !important;">{{isPewviewMode ? '退出播放' : '播放'}}</button>
+      <button class="btn btn-primary btn-sm" >保存</button>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+</div>
+
+
+
+

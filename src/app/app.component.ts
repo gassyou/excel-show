@@ -11,7 +11,8 @@ import { AppConfig } from '../environments/environment';
 export class AppComponent {
   title = 'excel-show';
   data: any;
-
+  isPewviewMode = true;
+  fileName = '';
 
   constructor(
     private electronService: ElectronService,
@@ -34,10 +35,10 @@ export class AppComponent {
 
   change(e: Event) {
     const node = e.target as HTMLInputElement;
+    // this.fileName =
+    console.log(node);
     this.xlsx.import(node.files![0]).then(res => {
       this.data = res;
-
-
     });
     node.value = '';
   }
